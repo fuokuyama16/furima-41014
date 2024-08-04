@@ -62,8 +62,7 @@
 | building            | string     | 
 | phone_number        | string     | null: false |
 | order               | references | null: false, foreign_key: true |
-| purchase_history_id | integer    | null: false |
 
 ### Association
 
-- belongs_to :purchase_history
+- belongs_to :order
