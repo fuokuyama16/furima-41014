@@ -7,9 +7,11 @@
 | nickname           | string | null: false |
 | email              | string | null: false, unique: true |
 | encrypted_password | string | null: false |
-| last_name          | string | null: false, unique: true |
-| family_name        | string | null: false |
-| birth              | string | null: false |
+| last_name          | string | null: false |
+| first_name         | string | null: false |
+| last_name_kana     | string | null: false |
+| first_name_kana    | string | null: false |
+| birthdate          | date   | null: false |
 
 
 ### Association
@@ -22,7 +24,6 @@
 
 | Column           | Type       | Options                        |
 | ----------       | ---------- | ------------------------------ |
-| image            | text       | null: false |
 | name             | string     | null: false |
 | description      | text       | null: false |
 | category_id      | integer    | null: false |
