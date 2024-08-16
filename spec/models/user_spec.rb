@@ -20,7 +20,7 @@ RSpec.describe User, type: :model do
       expect(@user.errors.full_messages).to include("Email can't be blank")
     end
     it 'メールアドレスが一意性でなければ登録できない' do
-      first_user = FactoryBot.create(:user, email: 'test@example.com')
+      FactoryBot.create(:user, email: 'test@example.com')
       second_user = FactoryBot.build(:user, email: 'test@example.com')
       second_user.valid?
       expect(second_user.errors[:email]).to include('has already been taken')
