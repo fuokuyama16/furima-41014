@@ -16,13 +16,4 @@ class Item < ApplicationRecord
   validates :description, :price, :image, presence: true
   validates :price, numericality: { only_integer: true, greater_than_or_equal_to: 300, less_than_or_equal_to: 9_999_999 }
   validates :user, presence: true
-
-  before_save :calculate_fees_and_profits
-
-  private
-
-  def calculate_fees_and_profits
-    self.fee = (price * 0.1).floor
-    self.profit = (price - fee).floor
-  end
 end
