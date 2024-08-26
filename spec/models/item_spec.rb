@@ -2,8 +2,7 @@ require 'rails_helper'
 
 RSpec.describe Item, type: :model do
   before do
-    @user = FactoryBot.create(:user)
-    @item = FactoryBot.build(:item, user: @user)
+    @item = FactoryBot.build(:item)
   end
 
   describe '商品出品機能' do
@@ -55,27 +54,27 @@ RSpec.describe Item, type: :model do
         @item.valid?
         expect(@item.errors.full_messages).to include("Description can't be blank")
       end
-      it 'カテゴリIDが1の場合は無効である' do
+      it 'カテゴリIDが1の場合は登録できない' do
         @item.category_id = 1
-        expect(@item).not_to be_valid
+        expect(@item.errors.full_messages).to include("Category can't be blank")
       end
-      it '状態IDが空では登録できない' do
-        @item.condition_id = ''
+      it '状態IDが1の場合は登録できない' do
+        @item.condition_id = 1
         @item.valid?
         expect(@item.errors.full_messages).to include("Condition can't be blank")
       end
-      it '配送料の負担IDが空では登録できない' do
-        @item.shipping_cost_id = ''
+      it '配送料の負担IDが1の場合は登録できない' do
+        @item.shipping_cost_id = 1
         @item.valid?
         expect(@item.errors.full_messages).to include("Shipping cost can't be blank")
       end
-      it '発送元の地域IDが空では登録できない' do
-        @item.prefecture_id = ''
+      it '発送元の地域IDが1の場合は登録できない' do
+        @item.prefecture_id = 1
         @item.valid?
         expect(@item.errors.full_messages).to include("Prefecture can't be blank")
       end
-      it '発送までの日数IDが空では登録できない' do
-        @item.shipping_day_id = ''
+      it '発送までの日数IDが1の場合は登録できない' do
+        @item.shipping_day_id = 1
         @item.valid?
         expect(@item.errors.full_messages).to include("Shipping day can't be blank")
       end
@@ -103,6 +102,11 @@ RSpec.describe Item, type: :model do
         @item.image = nil
         @item.valid?
         expect(@item.errors.full_messages).to include("Image can't be blank")
+      end
+      it '出品者が紐づいていなければ登録できない' do
+        @item.user = nil
+        @item.valid?
+        expect(@item.errors.full_messages).to include('User must exist')
       end
     end
   end
