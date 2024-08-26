@@ -5,21 +5,11 @@ class ItemsController < ApplicationController
 
   def new
     @item = Item.new
-    @categories = Category.all
-    @conditions = Condition.all
-    @shippingcosts = ShippingCost.all
-    @prefectures = Prefecture.all
-    @shippingdays = ShippingDay.all
   end
 
   def create
     @item = Item.new(item_params)
     @item.user = current_user
-    @categories = Category.all
-    @conditions = Condition.all
-    @shippingcosts = ShippingCost.all
-    @prefectures = Prefecture.all
-    @shippingdays = ShippingDay.all
     if @item.save
       redirect_to root_path
     else
