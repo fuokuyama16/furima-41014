@@ -8,7 +8,5 @@ class AddNamesToItems < ActiveRecord::Migration[7.0]
     add_column :items, :prefecture_id, :integer, null: false
     add_column :items, :shipping_day_id, :integer, null: false
     add_column :items, :price, :integer, null: false
-    add_column :items, :fee, :integer
-    add_column :items, :profit, :integer
   end
 end
