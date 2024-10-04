@@ -1,0 +1,18 @@
+example_id                                         | status | run_time        |
+-------------------------------------------------- | ------ | --------------- |
+./spec/models/order_address_form_spec.rb[1:1:1:1]  | passed | 0.11158 seconds |
+./spec/models/order_address_form_spec.rb[1:1:1:2]  | passed | 0.09495 seconds |
+./spec/models/order_address_form_spec.rb[1:1:2:1]  | passed | 0.24866 seconds |
+./spec/models/order_address_form_spec.rb[1:1:2:2]  | passed | 0.09486 seconds |
+./spec/models/order_address_form_spec.rb[1:1:2:3]  | passed | 0.09662 seconds |
+./spec/models/order_address_form_spec.rb[1:1:2:4]  | passed | 0.09796 seconds |
+./spec/models/order_address_form_spec.rb[1:1:2:5]  | passed | 0.09458 seconds |
+./spec/models/order_address_form_spec.rb[1:1:2:6]  | passed | 0.09418 seconds |
+./spec/models/order_address_form_spec.rb[1:1:2:7]  | passed | 0.09499 seconds |
+./spec/models/order_address_form_spec.rb[1:1:2:8]  | passed | 0.10873 seconds |
+./spec/models/order_address_form_spec.rb[1:1:2:9]  | passed | 0.09559 seconds |
+./spec/models/order_address_form_spec.rb[1:1:2:10] | passed | 0.09469 seconds |
+./spec/models/order_address_form_spec.rb[1:1:2:11] | passed | 0.10251 seconds |
+./spec/models/order_address_form_spec.rb[1:1:2:12] | passed | 0.09609 seconds |
+./spec/models/order_spec.rb[1:1:1]                 | passed | 0.23313 seconds |
+./spec/models/order_spec.rb[1:2:1]                 | failed | 0.1078 seconds  |
