@@ -1,7 +1,7 @@
 FactoryBot.define do
   factory :item do
     name { 'サンプル商品' }
-    description { '２０１０年頃に買った' }
+    description { '２０１０年頃買った' }
     category_id { 2 }
     condition_id { 2 }
     shipping_cost_id { 2 }
